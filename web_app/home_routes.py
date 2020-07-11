@@ -4,5 +4,6 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def hello_world():
-    return "Hello world! :]"
+def land_page():
+    print("YOU VISITED THE LANDING PAGE")
+    return "Landing Page (TODO)"
