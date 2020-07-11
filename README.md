@@ -7,14 +7,15 @@ A demonstration of a basic student information system and interactive visualizat
 
 ## Installation
 
-TODO instructions for git clone
+Clone this repo and then navigate to the `sis_demo` directory.
 
 ## Setup
 
-TODO instructions for virtual environment
+Initialize the `pipenv` in base directory.
 
 ## Usage
 
+Launch the flask app using:
 
 ```sh
 # Mac:
