@@ -19,7 +19,7 @@ Launch the flask app using:
 
 ```sh
 # Mac:
-FLASK_APP=web_app flask run
+FLASK_APP=web_app/home_routes.py flask run
 
 # Windows:
 # ? Export FLASK_APP=hello.py # one time set of environmental variable
