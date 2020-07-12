@@ -3,11 +3,13 @@
 from flask import Flask
 
 from web_app.routes.home_routes import home_routes
+from web_app.routes.student_routes import student_routes
 
 
 def create_app():
     app = Flask(__name__)
     app.register_blueprint(home_routes)
+    app.register_blueprint(student_routes)
     return app
 
 
