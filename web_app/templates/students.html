@@ -1,22 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- web_app/templates/students.html -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>list of students</title>
-</head>
+{% extends "layout.html" %}
 
-<body>
-    <h1>Student List</h1>
-    <p>Here is a list of students in D3000:</p>
-    <ul>
-        <li>Gary</li>
-        <li>Ryan</li>
-        <li>Dan</li>
-        <li>Jason</li>
-        <li>Jayce</li>
-        <li>Dan</li>
-</body>
+{% block title %}
+<title>Student List</title>
+{% endblock %}
 
-</html>
+{% block content %}
+
+<h2>D3000 Student List</h2>
+
+<p>{{ message }}</p>
+
+<ul>
+    <li>Gary</li>
+    <li>Ryan</li>
+    <li>Tony</li>
+    <li>Mike</li>
+    <li>Sandy</li>
+    <li>Dan</li>
+    <li>Paul</li>
+    <li>Jesse</li>
+    <li>Hugo</li>
+</ul>
+
+{% endblock %}

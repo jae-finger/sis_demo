@@ -6,4 +6,4 @@ student_routes = Blueprint("student_routes", __name__)
 
 @student_routes.route("/students")
 def student_list():
-    return render_template("students.html", message="Here is the list of students")
+    return render_template("students.html", message="Here is the list of students in D3000:")
