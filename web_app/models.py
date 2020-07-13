@@ -11,6 +11,20 @@ class Student(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     student_name = db.Column(db.String)
 
+# class Course(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     class_name = db.Column(db.String)
+#     teacher = db.relationship('Teacher', backref='course')
+
+# class Teacher(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     teacher_name = db.Column(db.String)
+#     class_id = db.Column(db.Integer, db.ForeignKey('course.id'))
+
+class Course(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    class_name = db.Column(db.String)
+
 class Teacher(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     teacher_name = db.Column(db.String)
@@ -20,12 +34,6 @@ class Schedule(db.Model):
     slot1 = db.Column(db.Integer)
     slot2 = db.Column(db.Integer)
     slot3 = db.Column(db.Integer)
-
-class Class(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    class_name = db.Column(db.String)
-    teacher_id = db.Column(db.Integer)
-
 
 def parse_records(database_records):
     """
