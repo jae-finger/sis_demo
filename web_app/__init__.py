@@ -9,13 +9,15 @@ from web_app.routes.home_routes import home_routes
 from web_app.routes.student_routes import student_routes
 
 load_dotenv()
-DATABASE_URI = os.getenv("DATABASE_URI")
+DATABASE_URL = os.getenv("DATABASE_URL")
+SECRET_KEY = os.getenv("SECRET_KEY", default="super secret")
 
 
 def create_app():
     app = Flask(__name__)
 
-    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///sis_vis_dev.db'
+    app.config["SECRET_KEY"] = SECRET_KEY
+    app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
     migrate.init_app(app, db)
