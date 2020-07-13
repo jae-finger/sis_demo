@@ -11,6 +11,15 @@ class Student(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     student_name = db.Column(db.String)
 
+class Teacher(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    teacher_name = db.Column(db.String)
+
+class Schedule(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    slot1 = db.Column(db.Integer)
+    slot2 = db.Column(db.Integer)
+    slot3 = db.Column(db.Integer)
 def parse_records(database_records):
     """
     A helper method for converting a list of database record objects into a list of dictionaries, so they can be returned as JSON
