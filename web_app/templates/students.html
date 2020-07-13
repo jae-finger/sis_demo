@@ -4,25 +4,24 @@
 {% set active_page = "students" %}
 
 {% block title %}
-<title>Student List</title>
+    <title>Student List</title>
 {% endblock %}
 
 {% block content %}
+    <h2>D3000 Student List</h2>
+    <p><a href="d3000-sis.herokuapp.com/clearx">Click here to the clear the student list.</a>
+        <a href="d3000-sis.herokuapp.com/seedx">Click here to the seed the student list.</a>
+        Students enrolled:</p>
 
-<h2>D3000 Student List</h2>
-
-<p>{{ message }}</p>
-
-<ul>
-    <li>Gary</li>
-    <li>Ryan</li>
-    <li>Tony</li>
-    <li>Mike</li>
-    <li>Sandy</li>
-    <li>Dan</li>
-    <li>Paul</li>
-    <li>Jesse</li>
-    <li>Hugo</li>
-</ul>
+    {% if students %}
+        <ul>
+            {% for student in students %}
+                <li>{{ student.student_name }}</li>
+            {% endfor %}
+        </ul>
+    
+    {% else %}
+        <p>There are currently no students enrolled!</p>
+    {% endif %}
 
 {% endblock %}
