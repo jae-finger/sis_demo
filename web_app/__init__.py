@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
-from web_app.routes.student_routes import student_routes
+from web_app.routes.school_routes import school_routes
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -23,7 +23,7 @@ def create_app():
     migrate.init_app(app, db)
 
     app.register_blueprint(home_routes)
-    app.register_blueprint(student_routes)
+    app.register_blueprint(school_routes)
     return app
 
 
