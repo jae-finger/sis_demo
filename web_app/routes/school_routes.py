@@ -1,6 +1,6 @@
 # web_app/routes/school_routes.py
 
-from web_app.models import db, Student, Course, Teacher, parse_records
+from web_app.models import db, Student, Course, Teacher
 from flask import Blueprint, render_template, jsonify
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -28,7 +28,7 @@ def seed_db():
     db.session.add(Teacher(teacher_name="Gary"))
     db.session.add(Teacher(teacher_name="Jayce"))
     db.session.add(Teacher(teacher_name="Jason"))
-    db.session.add(Course(class_name="Jason's Woodshop"))
+    db.session.add(Course(class_name="Jason's Woodshop Class"))
     db.session.add(Course(class_name="Gary's Dart Class"))
     db.session.add(Course(class_name="Jayce's Poetry Class"))
     db.session.commit()
