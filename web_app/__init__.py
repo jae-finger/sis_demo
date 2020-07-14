@@ -7,13 +7,14 @@ from dotenv import load_dotenv
 from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
 from web_app.routes.school_routes import school_routes
+from web_app.routes.vis_routes import vis_routes
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 SECRET_KEY = os.getenv("SECRET_KEY", default="super secret")
 
 
-def create_app():
+def create_app(): # Working base create app
     app = Flask(__name__)
 
     app.config["SECRET_KEY"] = SECRET_KEY
@@ -24,6 +25,21 @@ def create_app():
 
     app.register_blueprint(home_routes)
     app.register_blueprint(school_routes)
+    app.register_blueprint(vis_routes)
+    return app
+
+# def create_app(): # Working base create app
+#     server = Flask(__name__)
+
+#     server.config["SECRET_KEY"] = SECRET_KEY
+#     server.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+#     server.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+#     db.init_app(server)
+#     migrate.init_app(server, db)
+
+    app.register_blueprint(home_routes)
+    app.register_blueprint(school_routes)
+    app.register_blueprint(vis_routes)
     return app
 
 

@@ -8,19 +8,10 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 class Student(db.Model):
+    _tablename__ = 'students'
     id = db.Column(db.Integer, primary_key=True)
     student_name = db.Column(db.String)
-    # scores = db.relationship('Score')
-
-# class Course(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     class_name = db.Column(db.String)
-#     teacher = db.relationship('Teacher', backref='course')
-
-# class Teacher(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     teacher_name = db.Column(db.String)
-#     class_id = db.Column(db.Integer, db.ForeignKey('course.id'))
+    scores = db.relationship('Score')
 
 class Course(db.Model):
     __tablename__ = 'courses'
@@ -39,9 +30,9 @@ class Teacher(db.Model):
 class Score(db.Model):
     __tablename__ = 'scores'
     id = db.Column(db.Integer, primary_key=True)
+    assignment_name = db.Column(db.String)
     class_id = db.Column(db.Integer, db.ForeignKey('courses.id'))
-    # student_id = db.Column(db.Integer, db.ForeignKey('student.student_id'))
-    homework = db.Column(db.String)
+    student_id = db.Column(db.Integer, db.ForeignKey('student.id'))
     score = db.Column(db.Integer)
 
 # class Schedule(db.Model):
