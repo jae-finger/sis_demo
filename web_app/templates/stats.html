@@ -1,0 +1,28 @@
+<!-- web_app/templates/visuals.html -->
+
+{% extends "bootstrap_nav_layout.html" %}
+{% set active_page = "stats" %}
+
+{% block title %}
+    <title>Stats Example Using Grades </title>
+{% endblock %}
+
+{% block content %}
+    <table style="width:100%">
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td><img src="https://raw.githubusercontent.com/jae-finger/sis_demo/master/data/boxplot.png"></td>
+          <td><h3>Mann Whitney U Test</h3>
+            <h5>U = 57.75 and p = 0.004</h5>
+            <ul>
+                <li>Nonparametric test supports difference in average grades between courses</li>
+                <li>Gary's Class Mean: 80.25%; Standard deviation: 16.6</li>
+                <li>Jayce's Class Mean: 63.56%; Standard deviation: 16.3</li>
+            </ul>
+        </td>
+        </tr>
+      </table>
+{% endblock %}

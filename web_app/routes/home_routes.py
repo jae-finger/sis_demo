@@ -12,3 +12,7 @@ def index():
 @home_routes.route("/sql")
 def sql_page():
     return render_template("sql.html")
+
+@home_routes.route("/stats")
+def stats_page():
+    return render_template("stats.html")

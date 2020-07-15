@@ -32,9 +32,10 @@
     <!-- see: https://getbootstrap.com/docs/4.0/components/navbar/ -->
     {% set nav_links = [
       ('/', 'home', 'Home'),
-      ('/sql', 'sql', 'SQL'),
       ('/school', 'school', 'School Demo'),
-      ('/visuals', 'visualizations', 'Visualizations')
+      ('/sql', 'sql', 'SQL'),
+      ('/visuals', 'visualizations', 'Visualizations'),
+      ('/stats', 'stats', 'Stats Example')
     ] -%}
     {% set active_page = active_page|default('index') -%}
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #003399;">
