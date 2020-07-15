@@ -4,11 +4,14 @@
 {% set active_page = "visuals" %}
 
 {% block title %}
-    <title>Visualizations</title>
+    <title>Example Visualizations</title>
 {% endblock %}
 
 {% block content %}
-    {% for gb in gradebook %}
-        {{ gb|safe }}
-    {% endfor %}
+    <h5>Example 1 student grade curve</h5>
+    <img src="https://raw.githubusercontent.com/jae-finger/sis_demo/master/data/mike_curve.png">
+    <h5>Final grade comparison of two classes</h5>
+    <img src="https://raw.githubusercontent.com/jae-finger/sis_demo/master/data/boxplot.png">
+    <h5>Mann Whitney U Test</h5>
+    <p>U = 57.75 and p = 0.004</p>
 {% endblock %}
