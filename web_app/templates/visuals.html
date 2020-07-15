@@ -1,4 +1,14 @@
-<!-- web_app/templates/students.html -->
+<!-- web_app/templates/visuals.html -->
 
 {% extends "bootstrap_nav_layout.html" %}
 {% set active_page = "visuals" %}
+
+{% block title %}
+    <title>Visualizations</title>
+{% endblock %}
+
+{% block content %}
+    {% for gb in gradebook %}
+        {{ gb|safe }}
+    {% endfor %}
+{% endblock %}
