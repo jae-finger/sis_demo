@@ -93,7 +93,7 @@ def clear_db():
     db.session.commit()
     db.session.query(Score).delete()
     db.session.commit()
-    db.session.query(Course.delete()
+    db.session.query(Course).delete()
     db.session.commit()
     students = Student.query.all()
     teachers = Teacher.query.all()
