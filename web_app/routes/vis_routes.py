@@ -22,7 +22,6 @@ def visuals():
     # gradebook_query = "SELECT t.student_name, s.assignment_name, s.score, c.course_name, r.teacher_name FROM student t LEFT JOIN scores s ON t.id = s.student_id LEFT JOIN courses c ON s.class_id = c.id LEFT JOIN teachers r ON c.teacher_id = r.id;"
     cursor1.close()
     colz = ['Student', 'Assignment', 'Score', 'Class', 'Teacher']
-    gradebook_df = pd.DataFrame(gradebook_result, columns=colz)
     grade_data =[{'assignment_name': 'hw_1',
     'course_name': "Gary's Dart Class",
     'score': 81,
@@ -185,5 +184,5 @@ def visuals():
     'teacher_name': 'Jayce'}]
     plt.style.use('fast') 
     df = pd.DataFrame.from_dict(grade_data)
-    return render_template("index.html")
-    # return render_template("visuals.html", df = df)
+    # return render_template("index.html")
+    return render_template("visuals.html", df = df)
