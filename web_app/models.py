@@ -9,7 +9,7 @@ migrate = Migrate()
 
 class Student(db.Model):
     _tablename__ = 'students'
-    id = db.Column(db.Integer, primary_key=True, onupdate="CASCADE", ondelete="CASCADE")
+    id = db.Column(db.Integer, primary_key=True)
     student_name = db.Column(db.String)
     scores = db.relationship('Score')
 
@@ -32,7 +32,7 @@ class Score(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     assignment_name = db.Column(db.String)
     class_id = db.Column(db.Integer, db.ForeignKey('courses.id'))
-    student_id = db.Column(db.Integer, db.ForeignKey('student.id'))
+    student_id = db.Column(db.Integer, db.ForeignKey('student.id',  onupdate="CASCADE", ondelete="CASCADE"))
     score = db.Column(db.Integer)
 
 # class Schedule(db.Model):
