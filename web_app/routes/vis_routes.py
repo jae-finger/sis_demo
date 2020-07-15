@@ -22,6 +22,7 @@ def visuals():
     # print("CURSOR:", cursor1)
     gradebook_query = "SELECT t.student_name, s.assignment_name, s.score, c.course_name, r.teacher_name FROM scores s LEFT JOIN student t ON s.student_id = t.id LEFT JOIN courses c ON s.class_id = c.id LEFT JOIN teachers r ON c.teacher_id = r.id;"
     gradebook_result = cursor1.execute(gradebook_query).fetchall()
+    cursor1.close()
     colz = ['Student', 'Assignment', 'Score', 'Class', 'Teacher']
     gradebook_df = pd.DataFrame(gradebook_result, columns=colz)
     # return render_template("index.html")
