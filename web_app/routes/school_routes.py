@@ -87,14 +87,13 @@ def clear_db():
     # db.session.commit()
     # Course.query.delete()
     # db.session.commit()
-    db.session.query(Course).delete()
-    db.session.commit()
-    db.session.query(Student).delete()
-    db.session.commit()
-    db.session.query(Teacher).delete()
-    db.session.commit()
-    db.session.query(Score).delete()
-    db.session.commit()
+    def clear_data(session):
+        meta = db.metadata
+        for table in reversed(meta.sorted_tables):
+            print 'Clear table %s' % table
+            session.execute(table.delete())
+        session.commit()
+    clear_data(db.session)
     students = Student.query.all()
     teachers = Teacher.query.all()
     courses = Course.query.all()
