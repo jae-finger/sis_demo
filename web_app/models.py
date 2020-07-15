@@ -9,7 +9,7 @@ migrate = Migrate()
 
 class Student(db.Model):
     _tablename__ = 'students'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, onupdate="CASCADE", ondelete="CASCADE")
     student_name = db.Column(db.String)
     scores = db.relationship('Score')
 
