@@ -17,6 +17,7 @@ psycopg2-binary = "*"
 pandas = "*"
 dash = "*"
 scipy = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.8"

@@ -8,7 +8,6 @@ import os
 import sqlite3
 import pandas as pd
 import numpy as np
-import json
 
 DEV_DB_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "sis_vis_dev.db")
 
@@ -182,7 +181,6 @@ def visuals():
     'score': 55,
     'student_name': 'Kathi',
     'teacher_name': 'Jayce'}]
-    plt.style.use('fast') 
     df = pd.DataFrame.from_dict(grade_data)
     # return render_template("index.html")
     return render_template("visuals.html", df = df)
