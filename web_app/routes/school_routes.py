@@ -80,8 +80,11 @@ def seed_db():
 @school_routes.route("/clearx")
 def clear_db():
     Student.query.delete()
+    db.session.commit()
     Teacher.query.delete()
+    db.session.commit()
     Course.query.delete()
+    db.session.commit()
     Score.query.delete()
     db.session.commit()
     students = Student.query.all()
