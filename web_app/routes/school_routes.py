@@ -28,12 +28,15 @@ def seed_db():
     db.session.add(Student(id=777, student_name="Jesse"))
     db.session.add(Student(id=888, student_name="Paul"))
     db.session.add(Student(id=999, student_name="Kathi"))
+    db.session.commit()
     db.session.add(Teacher(id=1111, teacher_name="Gary"))
     db.session.add(Teacher(id=4444, teacher_name="Jayce"))
     db.session.add(Teacher(id=7777, teacher_name="Jason"))
+    db.session.commit()
     db.session.add(Course(id=33, course_name="Jason's Woodshop Class", teacher_id=7777))
     db.session.add(Course(id=66,course_name="Gary's Dart Class", teacher_id=1111))
     db.session.add(Course(id=99,course_name="Jayce's Poetry Class", teacher_id=4444))
+    db.session.commit()
     db.session.add(Score(class_id=66, student_id=111, assignment_name='hw_1', score=99))
     db.session.add(Score(class_id=66, student_id=111, assignment_name='hw_2', score=98))
     db.session.add(Score(class_id=66, student_id=111, assignment_name='hw_3', score=94))
@@ -79,14 +82,6 @@ def seed_db():
 
 @school_routes.route("/clearx")
 def clear_db():
-    # Student.query.delete()
-    # db.session.commit()
-    # Teacher.query.delete()
-    # db.session.commit()
-    # Score.query.delete()
-    # db.session.commit()
-    # Course.query.delete()
-    # db.session.commit()
     def clear_data(session):
         meta = db.metadata
         for table in reversed(meta.sorted_tables):
